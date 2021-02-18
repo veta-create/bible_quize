@@ -1,0 +1,94 @@
+body {
+  background-color: #F9AA4E;
+}
+
+h1 {
+  text-align: center;
+}
+
+nav {
+  margin-left: 130px;
+}
+
+@font-face {
+  font-family: Cormorant, sans-serif, serif;
+  src: url(fonts/Cormorant-MediumItalic.ttf);
+}
+
+nav a {
+  font-size: 30px;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  text-decoration: none;
+  border-radius: 20%;
+  box-shadow: 0 0 10px #816432;
+  color: #816432;
+  padding: 20px 40px;
+
+  background-color:  rgba(255, 208, 0, 0.61);
+}
+
+.facts {
+  display: block;
+  position: absolute;
+  top: 130px;
+  width: 500px;
+  height: 400px;
+  margin-left: 14%;
+  box-shadow: 0 0 20px #816432;
+  border-radius: 13em/3em;
+
+  background-size: 500px 400px;
+}
+
+.story {
+  display: block;
+  position: absolute;
+  top: 130px;
+  width: 500px;
+  height: 400px;
+  margin-left: 58%;
+  box-shadow: 0 0 20px #816432;
+  border-radius: 13em/3em;
+
+  background-size: 500px 400px;
+}
+
+.txt {
+  font-size: 40px;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  text-align: center;
+  vertical-align: top;
+  color: whitesmoke;
+  text-shadow: 0 0 5px rgb(41, 41, 41);
+}
+
+.block-facts {
+  display: none;
+  position: absolute;
+  left: 14%;
+  top: 130px;
+  width: 500px;
+  height: 400px;
+  font-size: 30px;
+  text-align: left;
+  color: #927137;
+  border-radius: 20% 10% 20% 10%;
+  
+  
+  background-color: whitesmoke;
+}
+
+.block-story {
+  display: none;
+  margin-bottom: 50px;
+  font-family: Cormorant, sans-serif, serif;
+  font-style: italic;
+  font-size: 25px;
+  font-weight: bolder;
+  color: #302514;
+}
+
+.facts:hover, .story:hover {
+  transform: scale(1.2);
+}
+
