@@ -78,8 +78,11 @@ form input[type="button"] {
   background-color: #a8b45f;
 }
 
-.quize .greeting h1 {
+.quize .greeting {
   display: none;
+}
+
+.quize .greeting h1 {
   position: relative;
   text-align: center;
   padding: 20px;
@@ -87,14 +90,13 @@ form input[type="button"] {
 }
 
 .quize .greeting p {
-  display: none;
   font-size: 25px;
   padding: 20px;
   color: #31250d;
 }
 
 .continue {
-  display: none;
+  display: block;
   position: relative;
   width: 100px;
   height: 50px;
@@ -124,24 +126,29 @@ form input[type="button"] {
 }
 
 .back {
+  display: 'none';
   position: absolute;
-  left: 61%;
+  left: 62%;
   top: 90%;
   width: 100px;
   height: 50px;
   border: none;
-  border-radius: 10%;
+  border-radius: 5%;
 
-  background-color: #53572d;
+  
+  background-color: #9da364;
 }
 
 .back a {
   font-size: 18px;
-  color: #161b10;
+  font-weight: bolder;
+
+  color: rgb(228, 226, 211);
   text-decoration: none;
 }
 
 .back:hover {
-  box-shadow: 0 0 10px #062208;
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
