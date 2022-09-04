@@ -100,31 +100,36 @@ form input[type="button"] {
   position: relative;
   text-align: center;
   padding: 20px;
-  color: #31250d;
+  color: #414135;
 }
 
 .quize .greeting p {
   font-size: 25px;
   padding: 20px;
-  color: #31250d;
+  color: #414135;
 }
 
 .continue {
   display: block;
   position: relative;
-  width: 100px;
-  height: 50px;
-  margin-left: 210px;
-  margin-top: 30px;
+  width: 25%;
+  height: 10%;
+  margin-left: 36%;
+  margin-right: 36%;
+  margin-top: 10%;
   border: none;
 
-  background-color: #50482a;
+  background-color: #696556;
+}
+
+.continue:hover {
+  border: none;
 }
 
 .continue a {
   text-decoration: none;
   font-size: 20px;
-  color: rgb(214, 207, 138);
+  color: rgb(227, 225, 205);
 }
 
 .jesus {
