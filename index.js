@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const greeting = document.querySelector('.greeting')
   const form = document.querySelector('form')
 
-  form.style.display = 'none'
-  greeting.style.display = 'block'
+  form.style.display = 'block'
+  greeting.style.display = 'none'
 
 })
