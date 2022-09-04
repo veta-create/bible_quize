@@ -5,14 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const blockStory = document.querySelectorAll(".block-story");
 
   facts.addEventListener("click", function() {
-    facts.style.display = "none";
+    facts.style.display = "block";
     blockFacts.style.display = "block";
   })
 
   story.addEventListener("click", function() {
-    facts.style.display = "none";
-    story.style.display = "none";
-    blockFacts.style.display = "none";
+    facts.style.display = "block";
+    story.style.display = "block";
+    blockFacts.style.display = "block";
     for(let story of blockStory) {
       story.style.display = "block";
     }
