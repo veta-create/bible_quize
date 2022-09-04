@@ -1,15 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   const greeting = document.querySelector('.greeting')
+  const end = document.querySelector('.end')
   const form = document.querySelector('form')
+  const backButton = document.querySelector('.back')
+  const continueButton = document.querySelector('.continue')
+  const answerButton = document.querySelector('.answer')
   const question = document.querySelector('.question')
   const a = document.getElementById('l1')
   const b = document.getElementById('l2')
   const c = document.getElementById('l3')
   const d = document.getElementById('l4')
+  let counter = 0
 
-  form.style.display = 'block'
-  greeting.style.display = 'none'
+  console.log(a, b, c, d)
 
+  let completedQuestions = []
 
   const random = function () {
     return Math.ceil(Math.random() * 10)
@@ -118,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       id: 10,
-      question: 'Кто в пртитче Иисуса помог человеку, который попался разбойникам и остался едва жив?',
+      question: 'Кто в притче Иисуса помог человеку, который попался разбойникам и остался едва жив?',
       answers: {
         a: 'Торговец',
         b: 'Пастух',
@@ -129,13 +134,42 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ]
 
-  const setQuestion = function(id) {
-    question.textContent = questionData[id - 1].question
-    a.textContent = questionData[id - 1].answers.a
-    b.textContent = questionData[id - 1].answers.b
-    c.textContent = questionData[id - 1].answers.c
-    d.textContent = questionData[id - 1].answers.d
+  const endTest = function() {
+    end.style.display = 'block'
+    form.style.display = 'none'
   }
+
+  const setQuestion = function() {
+    if(completedQuestions.length == 10) {
+      endTest()
+    }
+    r = random() - 1
+    if(completedQuestions.includes(r) == false) {
+      question.textContent = questionData[r].question
+      a.textContent = questionData[r].answers.a
+      b.textContent = questionData[r].answers.b
+      c.textContent = questionData[r].answers.c
+      d.textContent = questionData[r].answers.d
+      completedQuestions.push(r)
+    } else {
+      setQuestion()
+    }
+    
+    console.log(completedQuestions)
+  }
+
+  continueButton.addEventListener('click', () => {
+    continueButton.style.display = 'none'
+    greeting.style.display = 'none'
+    form.style.display = 'block'
+
+    setQuestion(random() - 1)
+  })
+
+  answerButton.addEventListener('click', () => {
+    setQuestion()
+  })
+
 
 
 })
