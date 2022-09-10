@@ -72,11 +72,15 @@ form label:hover:before {
 	background-color: #636451;
 }
 
+.buttons {
+  display: flex;
+}
+
 form input[type="button"] {
-  position: relative;
+  position: absolute;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10%;
+  margin-top: 50px;
   width: 25%;
   height: 10%;
   border: none;
@@ -157,11 +161,11 @@ form input[type="button"] {
 }
 
 .back {
+  position: absolute;
   display: 'none';
-  position: relative;
-  margin-left: 25%;
+  margin-left: 125px;
   margin-right: auto;
-  margin-top: 10%;
+  margin-top: 50px;
   width: 25%;
   height: 10%;
   border: none;

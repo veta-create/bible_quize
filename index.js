@@ -144,11 +144,11 @@ document.addEventListener('DOMContentLoaded', () => {
     resultWindow.textContent = result + '/10'
   }
 
-  const setQuestion = function() {
+  const setQuestion = function(r = random() - 1) {
     if(completedQuestions.length == 10) {
       endTest(counter)
     }
-    r = random() - 1
+    r = r
     currentQuestion = r
     if(completedQuestions.includes(r) == false) {
       question.textContent = questionData[r].question
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
       b.textContent = questionData[r].answers[2]
       c.textContent = questionData[r].answers[3]
       d.textContent = questionData[r].answers[4]
-      completedQuestions.push(r)
+      // completedQuestions.push(r)
     } else {
       setQuestion()
     }
@@ -165,6 +165,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   continueButton.addEventListener('click', () => {
     continueButton.style.display = 'none'
+    backButton.style.display = 'none'
+    answerButton.style.marginLeft = '37%'
     greeting.style.display = 'none'
     form.style.display = 'block'
 
@@ -181,7 +183,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   }
 
-  answerButton.addEventListener('click', () => {
+  answerButton.addEventListener('click', (r) => {
+    backButton.style.display = 'block'
+    answerButton.style.marginLeft = '55%'
+    completedQuestions.push(currentQuestion)
     checkAnswer()
     setQuestion()
   })
@@ -192,11 +197,21 @@ document.addEventListener('DOMContentLoaded', () => {
         currentAnswer[i] = 0
     }
     currentAnswer[e - 1] = 1
-    console.log(currentAnswer, 'setAnswer')
   }
 
   radioContainer.addEventListener('click', e => {
     setAnswer(e.target.id)
+  })
+
+  backButton.addEventListener('click', e => {
+    e.preventDefault()
+    setQuestion(completedQuestions.slice(-1))
+    completedQuestions.pop()
+    if(completedQuestions.length == 0) {
+      backButton.style.display = 'none'
+      answerButton.style.marginLeft = '40%'
+      answerButton.style.marginTop = '10%'
+    }
   })
 
 })
