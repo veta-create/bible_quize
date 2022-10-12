@@ -156,7 +156,6 @@ document.addEventListener('DOMContentLoaded', () => {
       b.textContent = questionData[r].answers[2]
       c.textContent = questionData[r].answers[3]
       d.textContent = questionData[r].answers[4]
-      // completedQuestions.push(r)
     } else {
       setQuestion()
     }
@@ -210,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if(completedQuestions.length == 0) {
       backButton.style.display = 'none'
       answerButton.style.marginLeft = '40%'
-      answerButton.style.marginTop = '10%'
+      answerButton.style.marginTop = '9.5%'
     }
   })
 
