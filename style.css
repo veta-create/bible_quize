@@ -8,9 +8,8 @@ body {
   font-family: Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.5;
-
   background-color: #deeea5;
-  background-image: url("images/palm.png");
+  /* background-image: url("images/palm.png"); */
   background-repeat: repeat-x;
   background-position: top;
 }
@@ -24,11 +23,10 @@ form {
 
 form .question {
   display: block;
-  width: 60%;
-  margin: auto;
-  margin-top: 10%;
-  text-align: center;
+  width: 100%;
+  margin: 0;
 
+  text-align: center;
   color: #414135;
 }
 
@@ -40,11 +38,9 @@ form label {
   display: inline-block;
   position: relative;
   padding-left: 25px;
-  margin-right: 0;
   font-weight: 500;
   line-height: 18px;
   cursor: pointer;
-
   color: #323229;
 }
 
@@ -56,150 +52,175 @@ form label::before {
   height: 18px;
   left: 0;
   bottom: 1px;
-
   background-color: #9da364;
   border-radius: 50%;
 }
 
-form input[type="radio"]:checked + label:before {
-  background-color: #636451;
-}
-
+form input[type="radio"]:checked+label:before,
 form label:hover:before {
   background-color: #636451;
 }
 
 .buttons {
   display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 form input[type="button"] {
-  width: 25%;
-  height: 10%;
-  position: absolute;
-  margin-left: auto;
-  margin-top: 50px;
-  margin-right: auto;
+  margin-left: -10%;
+  width: 45%;
+  padding: 10px;
   border: none;
   font-size: 18px;
-  font-weight: bolder;
-  text-decoration: none;
-
+  font-weight: bold;
   color: rgb(228, 226, 211);
   background-color: #636451;
-  border-radius: 5%;
+  border-radius: 8px;
 }
 
-.continue:hover,
 form input[type="button"]:hover {
   cursor: pointer;
-
   border: 4px solid #9da364;
 }
 
 .quize {
-  width: 530px;
-  height: 500px;
-  position: absolute;
-  padding: 0;
-  margin: 0;
-  left: 50%;
-  top: 28%;
-
+  width: 90%;
+  max-width: 530px;
+  height: auto;
+  margin: 5% auto;
+  padding: 20px;
   background-color: #e2e9bb;
   box-shadow: 0 0 10px #4e4d3d;
-  border-radius: 10%;
-}
-
-.quize .greeting {
-  display: block;
-}
-
-.quize .greeting h1 {
-  position: relative;
-  padding: 20px;
+  border-radius: 15px;
   text-align: center;
-
-  color: #414135;
 }
 
+.quize .greeting h1,
 .quize .greeting p {
-  padding: 20px;
-  font-size: 25px;
-
   color: #414135;
 }
 
 .continue {
   display: block;
-  position: relative;
-  width: 25%;
-  height: 10%;
-  margin-left: 36%;
-  margin-top: 10%;
-  margin-right: 36%;
-
+  width: 50%;
+  padding: 10px;
+  margin: 10% auto;
   background-color: #696556;
   border: none;
+  border-radius: 8px;
+}
+
+.continue a {
+  font-size: 20px;
+  color: rgb(227, 225, 205);
+  text-decoration: none;
 }
 
 .continue:hover {
   border: none;
 }
 
-.continue a {
-  font-size: 20px;
-  text-decoration: none;
-
-  color: rgb(227, 225, 205);
-}
-
 .jesus {
-  position: absolute;
+  position: relative;
+  width: 500px;
+  height: 500px;
   padding: 0;
   margin: 0;
-  left: 100px;
-  top: 100px;
+  left: -40px;
 }
 
 .back {
-  display: "none";
-  position: absolute;
-  width: 25%;
-  height: 10%;
-  margin-left: 125px;
-  margin-top: 50px;
-  margin-right: auto;
-
+  display: none;
+  width: 45%;
+  padding: 10px;
+  margin: 10px auto;
   background-color: #9da364;
   border: none;
-  border-radius: 5%;
+  border-radius: 8px;
 }
 
 .back a {
   font-size: 18px;
-  font-weight: bolder;
-  text-decoration: none;
-
+  font-weight: bold;
   color: rgb(228, 226, 211);
+  text-decoration: none;
 }
 
 .back:hover {
   cursor: pointer;
-
   border: 4px solid #636451;
 }
 
+.answer {
+  margin-left: -10%;
+}
+
 .radioContainer {
-  margin-left: 10%;
+  /* margin-left: 5%; */
+  display: grid;
+}
+
+.right {
+  display: flex;
+  align-items: center;
 }
 
 .end {
   display: none;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   font-size: 2em;
   text-align: center;
-
   color: #414135;
 }
+
+/* Responsive adjustments */
+/* @media (max-width: 768px) {
+  .quize {
+    width: 95%;
+    margin-top: 15%;
+    padding: 15px;
+  }
+
+  form .question {
+    width: 90%;
+    font-size: 20px;
+  }
+
+  form label {
+    padding-left: 20px;
+  }
+
+  form input[type="button"],
+  .continue {
+    width: 70%;
+    font-size: 16px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  form .question {
+    font-size: 18px;
+  }
+
+  form label {
+    font-size: 14px;
+  }
+
+  .quize {
+    padding: 10px;
+  }
+
+  form input[type="button"],
+  .continue,
+  .back {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+  }
+} */
